@@ -7,8 +7,17 @@ php:
   #- 5.6  
   
 env:
-  #- secure: Cl9e5akLjt3kpM/czbS+c5VIqKOyiJmGuGiObRp/cDF0yedw5++lDapYyiCW5GggJ3Pxe7FEG7jwnfADpdV8AozUO8EVO6w2hHtK/651t2Cc/McLLDGPbatqIGjRXuLcN8uKBTnxe0an1Wmg1ep6vUfh88sdvzyKBGpXzAiPEUgKBWLsgXnrHaRC7LAuMEBO4JxWFkeoUVTXvsio1OcFtIqasQMBEj11k90NC5TwkoSQq3rRpHwWIBoJnDbCFwyuHomTA13vci2k3Hg/hBhl3YKd6UtZkOSe+mQjtBqYMF9AAIeM6NLen9SOsAdn85KgeI6O7vK1yaVPan79X5Pdrg==
-  - BOO=TEST
+  global:
+    #- secure: Cl9e5akLjt3kpM/czbS+c5VIqKOyiJmGuGiObRp/cDF0yedw5++lDapYyiCW5GggJ3Pxe7FEG7jwnfADpdV8AozUO8EVO6w2hHtK/651t2Cc/McLLDGPbatqIGjRXuLcN8uKBTnxe0an1Wmg1ep6vUfh88sdvzyKBGpXzAiPEUgKBWLsgXnrHaRC7LAuMEBO4JxWFkeoUVTXvsio1OcFtIqasQMBEj11k90NC5TwkoSQq3rRpHwWIBoJnDbCFwyuHomTA13vci2k3Hg/hBhl3YKd6UtZkOSe+mQjtBqYMF9AAIeM6NLen9SOsAdn85KgeI6O7vK1yaVPan79X5Pdrg==
+    - BOO=TEST
+    - testUpdtedChangeInNewUIForCIVerifyLongCommitMessagesLongEnvironmentVariables=17aug2017
+    - A=one
+    - B=two C=three
+    - D: four E: five
+    - M1=test1
+    - M2=test2
+    - M3=test3
+    - secure: KPjnJb7lMNVneqPxs3/zOTTgiiM8w0z1VWjeNFbWdefSgEL/z+C2gSv0VM8sXsX05KSPU5OjwnylCruFGrCtI7YGZno1samrldep/UDCs8w3StiMVv3aZD+QjWr+cedyh5AHfMg9q9xRmbY0JMplAaxvExY2pSDrRJvAOjZnwmoSygALRz8umxHXFCyX6aRtX4NVDeHA9oXGErtaio6jSOV2KpgMXefXbZeog+vr7F9Y0Tpors4BqBj9QpL/e1YaVrclLrU46pg7X1KGFQeZXBiTurarpCuiJJ60uhcafTXgYfjLmEFchRDSL2DePiJ6L1FtBKy9627vFMsWOOA/Fg== #M4=test4
   
 build:
  # pre_ci:
@@ -24,7 +33,18 @@ build:
     - mkdir -p shippable/codecoverage
     - mkdir -p shippable/testresults   
     - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
-  
+    - echo $BOO
+    - echo $testUpdtedChangeInNewUIForCIVerifyLongCommitMessagesLongEnvironmentVariables
+    - echo $A
+    - echo $B
+    - echo $C
+    - echo $D
+    - echo $E
+    - echo $M1
+    - echo $M2
+    - echo $M3
+    - echo $M4
+    
 #  post_ci:
   #  - docker push shippabledocker/sample_node:jun217
     
