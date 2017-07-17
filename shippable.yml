@@ -13,7 +13,8 @@ env:
     - testUpdtedChangeInNewUIForCIVerifyLongCommitMessagesLongEnvironmentVariables=17aug2017
     - A=one
     - B=two C=three
-    - D: four E: five
+    - D: four 
+      E: five
     - M1=test1
     - M2=test2
     - M3=test3
