@@ -24,7 +24,7 @@ integrations:
       on_failure: always
       on_pull_request: always  
       
-    - integrationName: slack
+    - integrationName: notify-slack
       type: slack
       recipients: 
         - "#hitchcock1-public"
@@ -44,7 +44,7 @@ integrations:
       on_success: always
       on_failure: always
    
-    - integrationName: hipchat
+    - integrationName: notify-hipchat
       type: hipchat
       recipients: 
         - "#hitchcock1pvt"
