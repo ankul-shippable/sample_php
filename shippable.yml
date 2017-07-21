@@ -44,7 +44,7 @@ build:
     - echo $M1
     - echo $M2
     - echo $M3
-    - echo $M4
+    - echo $M4  
     
 #  post_ci:
   #  - docker push shippabledocker/sample_node:jun217
