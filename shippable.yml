@@ -45,6 +45,10 @@ build:
     - echo $M2
     - echo $M3
     - echo $M4  
+    - lsb_release -a
+    - docker --version
+    - docker info
+    - docker ps
     
 #  post_ci:
   #  - docker push shippabledocker/sample_node:jun217
