@@ -8,7 +8,6 @@ php:
   
 env:
   global:
-    #- secure: Cl9e5akLjt3kpM/czbS+c5VIqKOyiJmGuGiObRp/cDF0yedw5++lDapYyiCW5GggJ3Pxe7FEG7jwnfADpdV8AozUO8EVO6w2hHtK/651t2Cc/McLLDGPbatqIGjRXuLcN8uKBTnxe0an1Wmg1ep6vUfh88sdvzyKBGpXzAiPEUgKBWLsgXnrHaRC7LAuMEBO4JxWFkeoUVTXvsio1OcFtIqasQMBEj11k90NC5TwkoSQq3rRpHwWIBoJnDbCFwyuHomTA13vci2k3Hg/hBhl3YKd6UtZkOSe+mQjtBqYMF9AAIeM6NLen9SOsAdn85KgeI6O7vK1yaVPan79X5Pdrg==
     - BOO=TEST
     - testUpdtedChangeInNewUIForCIVerifyLongCommitMessagesLongEnvironmentVariables=17aug2017
     - A=one
@@ -18,7 +17,6 @@ env:
     - M1=test1
     - M2=test2
     - M3=test3
-    - secure: KPjnJb7lMNVneqPxs3/zOTTgiiM8w0z1VWjeNFbWdefSgEL/z+C2gSv0VM8sXsX05KSPU5OjwnylCruFGrCtI7YGZno1samrldep/UDCs8w3StiMVv3aZD+QjWr+cedyh5AHfMg9q9xRmbY0JMplAaxvExY2pSDrRJvAOjZnwmoSygALRz8umxHXFCyX6aRtX4NVDeHA9oXGErtaio6jSOV2KpgMXefXbZeog+vr7F9Y0Tpors4BqBj9QpL/e1YaVrclLrU46pg7X1KGFQeZXBiTurarpCuiJJ60uhcafTXgYfjLmEFchRDSL2DePiJ6L1FtBKy9627vFMsWOOA/Fg== #M4=test4
   
 build:
  # pre_ci:
@@ -54,86 +52,3 @@ build:
   #  - docker push shippabledocker/sample_node:jun217
     
  # cache: true
-    
-integrations:  
-  hub:
- #Docker integration
-    - integrationName: ship-docker
-      type: docker
-      
-  notifications:
-    - integrationName: notify-slack 
-      type: slack
-      recipients:
-        - "#random" 
-        - "#rc-public" 
-        - "#rc-private"
-      on_start: always
-      on_success: change
-      on_failure: change 
-      on_cancel: change
-       
-    - integrationName: email         
-      type: email        
-      recipients:  
-        - shiptest.rc.ow@gmail.com
-        - shiptest.rc.me@gmail.com
-     # sendConsoleLogs : true
-     # sendCoverageReports : true
-      on_start: always
-      on_success: change
-      on_failure: change
-      on_cancel: change
-     
-    - integrationName: irc  
-      type: irc
-      recipients:
-        - "chat.freenode.net#test-rc"
-        - "webchat.irchighway.net#test-rc"
-      on_start: always
-      on_success: change  
-      on_failure: change
-      on_cancel: change
-    
-    - integrationName: notify-hipchat
-      type: hipchat
-      recipients: 
-        - '#rc-private'
-        - '#rc-public'
-        - '@shiptestrcow'
-      on_start: always
-      on_success: change
-      on_failure: change
-      on_cancel: change
-     
-    - integrationName: generic-webhook   #issue will get created in github samleNod project
-      type: webhook
-      payload:
-        - title=Failure - $REPO_FULL_NAME - $BUILD_NUMBER
-        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) failed for $COMPARE_URL 
-      on_start: always
-      on_success: always
-      on_failure: change 
-      on_cancel: always
-      
-    - integrationName: project-trigger #samplNod project in shiptest-rc-ow will trigger
-      type: webhook
-      payload:
-       # - BUILD_NUM=$SHIPPABLE_JOB_NUMBER 
-        - BUILD_NUM=$SHIPPABLE_BUILD_NUMBER
-        - FOO=FUBU
-        - GOO=GUBU
-      on_start: always
-      on_success: change
-      on_failure: change
-      on_cancel: change
-      
-    - integrationName: resource-trigger
-      type: webhook
-      payload:
-        - versionName=Shippable Run $BUILD_NUMBER 
-      on_start: always
-      on_success: change
-      on_failure: change
-      on_cancel: change      
-  
