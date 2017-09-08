@@ -3,6 +3,8 @@ language: php
 
   
 env:
+  - Matrix: m1
+  - Matrix: m2
   global:
     - BOO=TEST
     - testUpdtedChangeInNewUIForCIVerifyLongCommitMessagesLongEnvironmentVariables=17aug2017
