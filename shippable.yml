@@ -5,16 +5,6 @@ language: php
 env:
   - Matrix: m1
   - Matrix: m2
-  global:
-    - BOO=TEST
-    - testUpdtedChangeInNewUIForCIVerifyLongCommitMessagesLongEnvironmentVariables=17aug2017
-    - A=one
-    - B=two C=three
-    - D: four 
-      E: five
-    - M1=test1
-    - M2=test2
-    - M3=test3
   
 build:
  # pre_ci:
