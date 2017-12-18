@@ -11,8 +11,8 @@ env:
   - BOO=TEST
   
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/sample_node:jun217 .
+  #pre_ci:
+    #- docker build -t=shippabledocker/sample_node:jun217 .
 
   pre_ci_boot:
     image_name: drydock/u16phpall
