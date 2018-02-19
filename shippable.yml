@@ -21,8 +21,7 @@ build:
     
   ci:
     - mkdir -p shippable/codecoverage
-    - mkdir -p shippable/testresults   
-    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php  
+    - mkdir -p shippable/testresults
     - echo "lang c"
     - printenv
     - java -version    
